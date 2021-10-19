@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/customer/edit}" th:object="${customer}" method="post" enctype="multipart/form-data">
+    <table >
+        <td>id</td>
+        <td><input type="text" th:field="*{id}"></td>
+        <tr>
+            <td>firstName</td>
+            <td><input type="text" th:field="*{firstName}"></td>
+        </tr>
+        <tr>
+            <td>lastName</td>
+            <td><input type="text" th:field="*{lastName}"></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="file" th:field="*{image}"></td>
+        </tr>
+    </table>
+    <button type="submit">edit</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/WEB-INF/views/customer}"></a>
+<h1>Customer product</h1>
+
+<form th:action="@{/customer/delete}" th:object="${customer}" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><input type="text" th:field="*{id}" readonly></td>
+            <td><input type="text" th:field="*{firstName}" readonly></td>
+            <td><input type="text"  th:field="*{lastName}" readonly></td>
+            <td><input type="file" th:field="*{image}" readonly></td>
+        </tr>
+    </table>
+    <button type="submit" >Delete</button>
+</form>
+</body>
+</html>

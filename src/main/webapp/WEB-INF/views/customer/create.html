@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/WEB-INF/views/customer}">customer</a>
+<h1>Create customer</h1>
+
+<th:block th:if="${mess}">
+    <p th:text="${mess}"></p>
+</th:block>
+
+<form th:action="@{/customer/create}" th:object="${customer}" method="post" enctype="multipart/form-data">
+    <table>
+        <td>firstName</td>
+        <td><input type="text" th:field="*{firstName}"/></td>
+
+        <td>lastName</td>
+        <td><input type="text" th:field="*{lastName}"></td>
+
+        <td>Image</td>
+        <td><input type="file" th:field="*{image}"></td>
+    </table>
+    <button type="submit">create</button>
+</form>
+</body>
+</html>
